@@ -30,6 +30,25 @@
 .food--ingredients--items > div {
   margin-top: 10px;
   font-size: 12px;
-  background: #fff;
+  background: #f8f8f8;
+  border: 1px solid #eee;
+  padding: 10px;
+}
+
+.food--nutrients h5 {
+  margin: 10px 0 0;
+}
+
+.food--nutrients--items {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-column-gap: 10px;
+}
+
+.food--nutrients--items > div {
+  margin-top: 10px;
+  font-size: 12px;
+  background: #f8f8f8;
+  border: 1px solid #eee;
   padding: 10px;
 }

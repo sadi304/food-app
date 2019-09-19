@@ -47,6 +47,7 @@ class Search extends Component {
           name={result.recipe.label}
           imageUrl={result.recipe.image}
           ingredients={result.recipe.ingredients}
+          nutrients={result.recipe.totalNutrients}
         />
       ))
     )
