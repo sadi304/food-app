@@ -1,7 +1,7 @@
 .food {
   margin-top: var(--spacing-regular);
   display: flex;
-  background: #f2f2f2;
+  background: #f8f8f8;
   padding: 10px;
 }
 
@@ -11,6 +11,7 @@
 
 .food--image img {
   max-width: 150px;
+  border-radius: 50%;
 }
 
 .food--name {
@@ -22,17 +23,15 @@
 }
 
 .food--ingredients--items {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-column-gap: 10px;
+  padding: 0;
+  list-style: none;
+  margin: 10px 0;
 }
 
-.food--ingredients--items > div {
-  margin-top: 10px;
-  font-size: 12px;
-  background: #f8f8f8;
-  border: 1px solid #eee;
-  padding: 10px;
+.food--ingredients--items li {
+  list-style: square;
+  list-style-position: inside;
+  margin: 5px 0;
 }
 
 .food--nutrients h5 {
@@ -49,6 +48,6 @@
   margin-top: 10px;
   font-size: 12px;
   background: #f8f8f8;
-  border: 1px solid #eee;
+  border: 1px solid #ddd;
   padding: 10px;
 }

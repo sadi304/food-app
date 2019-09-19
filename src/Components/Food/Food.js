@@ -14,7 +14,7 @@ const Food = ({
       <img src={imageUrl} alt="Food" />
     </div>
     <div className="food--content">
-      <h4 className="food--name">{name}</h4>
+      <h3 className="food--name">{name}</h3>
       <div className="food--nutrients">
         <h5>Nutrients: </h5>
         <div className="food--nutrients--items">
@@ -29,24 +29,16 @@ const Food = ({
         </div>
       </div>
       <div className="food--ingredients">
-        <h5>Ingredients:</h5>
-        <div className="food--ingredients--items">
+        <h5>Step by step:</h5>
+        <ul className="food--ingredients--items">
           {
             ingredients.map((ingredient, index) => (
-              <div key={index}>
-                <div>
-                  <b>Name: </b>{ingredient.text}
-                </div>
-                <div>
-                  <b>Quantity: </b> {ingredient.quantity}
-                </div>
-                <div>
-                  <b>Measure: </b> {ingredient.measure}
-                </div>
-              </div>
+              <li key={index}>
+                { ingredient }
+              </li>
             ))
           }
-        </div>
+        </ul>
       </div>
     </div>
   </div>

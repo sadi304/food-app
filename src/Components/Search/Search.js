@@ -5,6 +5,7 @@ import { faSearch } from '@fortawesome/free-solid-svg-icons'
 import './Search.css';
 import { restRequest } from '../../Helpers/Request';
 import Food from '../Food/Food';
+import Loader from '../Loader/Loader';
 
 class Search extends Component {
   state = {
@@ -40,13 +41,14 @@ class Search extends Component {
   }
 
   renderResults() {
-    const { results } = this.state;
+    const { results, loading } = this.state;
+    if(loading) return <Loader />;
     return(
       results.map((result, index) => (
         <Food 
           name={result.recipe.label}
           imageUrl={result.recipe.image}
-          ingredients={result.recipe.ingredients}
+          ingredients={result.recipe.ingredientLines}
           nutrients={result.recipe.totalNutrients}
         />
       ))
