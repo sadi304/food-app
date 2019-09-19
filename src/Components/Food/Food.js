@@ -29,7 +29,7 @@ const Food = ({
         </div>
       </div>
       <div className="food--ingredients">
-        <h5>Step by step:</h5>
+        <h5>Step by Step (Ingredients):</h5>
         <ul className="food--ingredients--items">
           {
             ingredients.map((ingredient, index) => (

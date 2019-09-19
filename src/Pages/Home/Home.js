@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 
-import './Home.css';
 import Search from '../../Components/Search/Search';
+
+import './Home.css';
 
 class Home extends Component {
   render() {

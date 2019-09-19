@@ -2,11 +2,17 @@
   margin-top: var(--spacing-regular);
   display: flex;
   background: #f8f8f8;
-  padding: 10px;
+  padding: 20px;
+  border: 1px solid #eee;
+  border-radius: 10px;
+}
+
+.food--content {
+  width: 100%;
 }
 
 .food--image {
-  margin-right: 10px;
+  margin-right: var(--spacing-regular);
 }
 
 .food--image img {
@@ -20,6 +26,8 @@
 
 .food--ingredients h5 {
   margin: 10px 0 0;
+  color: #DA7376;
+  text-transform: uppercase;
 }
 
 .food--ingredients--items {
@@ -36,6 +44,8 @@
 
 .food--nutrients h5 {
   margin: 10px 0 0;
+  color: #DA7376;
+  text-transform: uppercase;
 }
 
 .food--nutrients--items {
@@ -47,7 +57,9 @@
 .food--nutrients--items > div {
   margin-top: 10px;
   font-size: 12px;
-  background: #f8f8f8;
-  border: 1px solid #ddd;
-  padding: 10px;
+  background: #fff;
+  border: 1px solid #eee;
+  padding: 5px 10px;
+  color: #555;
+  border-radius: 5px;
 }

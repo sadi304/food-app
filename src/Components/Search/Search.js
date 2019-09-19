@@ -37,14 +37,8 @@ class Search extends Component {
 
   handleSearchInputOnChange = event => {
     const query = event.target.value;
-
-    if(!query) {
-      this.setState({ query, items: [] } );
-      return;
-    }
-    this.setState({ query, loading: true }, () => {
-      this.fetchSearchResults(query);
-    });
+    this.setState({ query });
+    this.fetchSearchResults(query);
   }
 
   renderResults() {
