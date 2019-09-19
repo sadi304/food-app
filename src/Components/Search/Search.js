@@ -4,11 +4,12 @@ import { faSearch } from '@fortawesome/free-solid-svg-icons'
 
 import './Search.css';
 import { restRequest } from '../../Helpers/Request';
+import Food from '../Food/Food';
 
 class Search extends Component {
   state = {
     query: '',
-    items: [],
+    results: [],
     loading: false
   }
 
@@ -16,8 +17,8 @@ class Search extends Component {
     this.setState({ loading: true });
 
     try {
-      const results = await restRequest('get', `search?q=chicken`);
-      this.setState({ items: results });
+      const response = await restRequest('get', `search?q=chicken`);
+      this.setState({ results: response.data.hits });
     } catch(error) {
       alert('there was an error.');
     }
@@ -38,6 +39,19 @@ class Search extends Component {
     });
   }
 
+  renderResults() {
+    const { results } = this.state;
+    return(
+      results.map((result, index) => (
+        <Food 
+          name={result.recipe.label}
+          imageUrl={result.recipe.image}
+          ingredients={result.recipe.ingredients}
+        />
+      ))
+    )
+  }
+
   render() {
     const { query } = this.state;
 
@@ -53,6 +67,9 @@ class Search extends Component {
 					/>
           <FontAwesomeIcon icon={faSearch} className="search--icon" />
 				</label>
+        <div className="search--results">
+          { this.renderResults() }
+        </div>
       </div>
     )
   }

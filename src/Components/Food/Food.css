@@ -1,0 +1,35 @@
+.food {
+  margin-top: var(--spacing-regular);
+  display: flex;
+  background: #f2f2f2;
+  padding: 10px;
+}
+
+.food--image {
+  margin-right: 10px;
+}
+
+.food--image img {
+  max-width: 150px;
+}
+
+.food--name {
+  margin: 0;
+}
+
+.food--ingredients h5 {
+  margin: 10px 0 0;
+}
+
+.food--ingredients--items {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-column-gap: 10px;
+}
+
+.food--ingredients--items > div {
+  margin-top: 10px;
+  font-size: 12px;
+  background: #fff;
+  padding: 10px;
+}
