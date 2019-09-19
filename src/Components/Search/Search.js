@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faSearch } from '@fortawesome/free-solid-svg-icons'
+import debounce from 'lodash/debounce';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSearch } from '@fortawesome/free-solid-svg-icons';
 
-import './Search.css';
 import { restRequest } from '../../Helpers/Request';
 import Food from '../Food/Food';
 import Loader from '../Loader/Loader';
+
+import './Search.css';
 
 class Search extends Component {
   state = {
@@ -13,12 +15,17 @@ class Search extends Component {
     results: [],
     loading: false
   }
+  
+  constructor() {
+    super();
+    this.fetchSearchResults = debounce(this.fetchSearchResults, 500);
+  }
 
   async fetchSearchResults(query) {
     this.setState({ loading: true });
 
     try {
-      const response = await restRequest('get', `search?q=chicken`);
+      const response = await restRequest('get', `search?q=${query}`);
       this.setState({ results: response.data.hits });
     } catch(error) {
       alert('there was an error.');
@@ -46,6 +53,7 @@ class Search extends Component {
     return(
       results.map((result, index) => (
         <Food 
+          key={index}
           name={result.recipe.label}
           imageUrl={result.recipe.image}
           ingredients={result.recipe.ingredientLines}
